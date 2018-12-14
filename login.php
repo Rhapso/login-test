@@ -10,9 +10,8 @@
 
     if ($name && $passowrd){//如果用户名和密码都不为空
              $sql = "select * from user where username = '$name' and password='$passowrd'";//检测数据库是否有对应的username和password的sql
-             $result = mysql_query($sql);//执行sql
-             $rows=mysql_num_rows($result);//返回一个数值
-             if($rows){//0 false 1 true
+             $result = $conn->query($sql);//执行sql
+             if($result->num_rows > 0){//0 false 1 true
                    header("refresh:0;url=welcome.html");//如果成功跳转至welcome.html页面
                    exit;
              }else{
@@ -36,5 +35,5 @@
                         //如果错误使用js 1秒后跳转到登录页面重试;
     }
 
-    mysql_close();//关闭数据库
+    $conn->close();//关闭数据库
 ?>
