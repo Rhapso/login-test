@@ -11,6 +11,7 @@
     include('connect.php');//链接数据库
     
     $q="insert into user(id,username,password) values (null,'$name','$password')";//向数据库插入表单传来的值的sql
+    echo $q;
     if ($conn->query($q) === TRUE) {
         echo "注册成功";//成功输出注册成功
     } else {
