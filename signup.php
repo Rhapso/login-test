@@ -5,12 +5,12 @@
         exit("错误执行");
     }//判断是否有submit操作
 
-    $name=$_POST['name'];//post获取表单里的name
-    $password=$_POST['password'];//post获取表单里的password
+    $user_name=$_POST['name'];//post获取表单里的name
+    $user_password=$_POST['password'];//post获取表单里的password
 
     include('connect.php');//链接数据库
     
-    $q="insert into user(id,username,password) values (null,'$name','$password')";//向数据库插入表单传来的值的sql
+    $q="insert into user(id,username,password) values (null,'$user_name','$user_password')";//向数据库插入表单传来的值的sql
     echo $q;
     if ($conn->query($q) === TRUE) {
         echo "注册成功";//成功输出注册成功
