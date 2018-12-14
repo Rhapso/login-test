@@ -12,11 +12,13 @@
     $q="insert into user(id,username,password) values (null,'$name','$password')";//向数据库插入表单传来的值的sql
     $reslut=mysql_query($q,$con);//执行sql
     
-    if (!$reslut){
-        die('Error: ' . mysql_error());//如果sql执行失败输出错误
-    }else{
-        echo "注册成功";//成功输出注册成功
-    }
+    echo $reslut;
+
+    // if (!$reslut){
+    //     die('Error: ' . mysql_error());//如果sql执行失败输出错误
+    // }else{
+    //     echo "注册成功";//成功输出注册成功
+    // }
 
     
 
